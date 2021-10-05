@@ -1,10 +1,11 @@
 import java.util.Random;
 
 /* The Bubble Sort Big O notation is O(n^2).
-* the number of comparisons is the sum of the array's indexes.
+* The number of comparisons is the sum of the array's indexes.
+* It's a stable algorithm.
 */
 
-public class bubbleSort {
+public class BubbleSort {
     public static void main(String[] args) {
         Random rand = new Random();
         int[] array = new int[rand.nextInt(100)];
@@ -15,14 +16,13 @@ public class bubbleSort {
             array[i] = rand.nextInt(100);
             System.out.print("[" + array[i] + "], ");
         }
-        int numberOfComparisons = 0;
+
         // sorting the array
         for (int lastUnsortedIndex = array.length - 1; lastUnsortedIndex > 0; lastUnsortedIndex--) {
             for (int i = 0; i < lastUnsortedIndex; i++) {
                 if (array[i] > array[i + 1]) {
                     swap(array, i, i + 1);
                 }
-                numberOfComparisons++;
             }
         }
         // Final result
@@ -31,7 +31,6 @@ public class bubbleSort {
             System.out.print("[" + array[i] + "], ");
         }
         System.out.println("\n\nArray length: " + array.length);
-        System.out.println("Total number of comparisons: " + numberOfComparisons);
     }
     
     public static void swap(int array[], int firstNumberIndex, int secondNumberIndex) {
