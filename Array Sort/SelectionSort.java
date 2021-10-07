@@ -1,7 +1,6 @@
 import java.util.Random;
 
 /* The Selection Sort Big O notation is O(n^2).
-* the number of comparisons is the sum of the array's indexes.
 * It's an unstable algorithm.
 */
 public class SelectionSort {
